@@ -1,0 +1,27 @@
+CREATE TABLE `USERS` (
+	`SEQ` int NOT NULL auto_increment,
+    `ID` VARCHAR(20),
+    `PASSWORD` VARCHAR(20),
+    `NAME` VARCHAR(20),
+    `ROLE` VARCHAR(5),
+    PRIMARY KEY (`SEQ`));
+    
+INSERT INTO USERS(ID,PASSWORD,NAME,ROLE) VALUES('test','test123','관리자','Admin');
+INSERT INTO USERS(ID,PASSWORD,NAME,ROLE) VALUES('user1','user1','홍길동','User');
+
+CREATE TABLE `BOARD` (
+	`SEQ` int NOT NULL auto_increment,
+    `TITLE` VARCHAR(50),
+    `WRITER` VARCHAR(50),
+    `CONTENT` TEXT,
+    `REGDATE` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `CNT` int NOT NULL DEFAULT 0,
+    PRIMARY KEY (`SEQ`));
+    
+INSERT INTO BOARD(TITLE, WRITER,CONTENT) VALUES('가입인사','관리자','잘 부탁드립니다.');
+
+SELECT * FROM users;
+
+select version()
+
+DELETE `BOARD` where seq<=10;
